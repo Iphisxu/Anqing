@@ -1,0 +1,150 @@
+!!! CMAQ-ISAM tag definition control file
+!!!   (lines begining with !!! - three exclamation marks - are ignored by the text parser)!!!
+!!!
+!!!   Example file provided with CMAQ v5.3.2 release
+!!!   26 July 2020: Sergey L. Napelenok
+!!!
+!!!
+!!! The "TAG CLASSES" line defines the tag classes to track for the simulation. Species in NITRATE and VOC classes depend on the
+!!! the chemical mechanism used. The below definitions apply for the cb6r3_ae7_aq mechanism. These species will be tracked for
+!!! each user-defiend source.
+!!!   Choose any/all from the list of nine:  SULFATE, NITRATE, AMMONIUM, EC, OC, VOC, PM25_IONS, OZONE, CHLORINE 
+!!!   SULFATE   - ASO4J, ASO4I, SO2, SULF, SULRXN
+!!!   NITRATE   - ANO3J, ANO3I, HNO3, NO, NO2, NO3, HONO, N2O5, PNA, PAN, PANX, NTR1, NTR2, INTR, CLNO2, CLNO3
+!!!   AMMONIUM  - ANH4J, ANH4I, NH3
+!!!   EC        - AECJ, AECI
+!!!   OC        - APOCI, APOCJ, APNCOMI, APNCOMJ
+!!!   VOC       - Various species depending on mechanism. Now includes CO. (see CCTM/src/isam/SA_DEFN.F for complete list)
+!!!   PM25_IONS - ANAI, ANAJ, AMGJ, AKJ, ACAJ, AFEJ, AALJ, ASIJ, ATIJ, AMNJ, AOTHRI, AOTHRJ
+!!!   OZONE     - O3, all NITRATE species, and all VOC species
+!!!   CHLORINE  - ACLI, ACLJ, HCL
+
+TAG CLASSES     |OZONE, PM25_IONs
+
+!!! The following are source definition text blocks in the format. Provide a 3-line block for each source you want to track.
+!!! Do not assign the same source of mass in more than 1 source definition block. 
+!!!   TAG NAME        |Three character text string (unique to each source definition)
+!!!   REGION(S)       |Keyword EVERYWHERE or variable names from the region file (multiple regions need to be comma delimited)
+!!!   FILENAME(S)     |Emissions labels (multiple labels need to be comma delimited)
+
+TAG NAME        |AQP
+REGION(S)       |Anqing
+EMIS STREAM(S)  |MEIC_POW
+
+TAG NAME        |AQI
+REGION(S)       |Anqing
+EMIS STREAM(S)  |MEIC_IND
+
+TAG NAME        |AQR
+REGION(S)       |Anqing
+EMIS STREAM(S)  |MEIC_RES
+
+TAG NAME        |AQT
+REGION(S)       |Anqing
+EMIS STREAM(S)  |MEIC_TRA
+
+TAG NAME        |AQA
+REGION(S)       |Anqing
+EMIS STREAM(S)  |MEIC_AGR
+
+TAG NAME        |AQB
+REGION(S)       |Anqing
+EMIS STREAM(S)  |MEIC_BIO
+
+TAG NAME        |HFP
+REGION(S)       |Hefei
+EMIS STREAM(S)  |MEIC_POW
+
+TAG NAME        |HFI
+REGION(S)       |Hefei
+EMIS STREAM(S)  |MEIC_IND
+
+TAG NAME        |HFR
+REGION(S)       |Hefei
+EMIS STREAM(S)  |MEIC_RES
+
+TAG NAME        |HFT
+REGION(S)       |Hefei
+EMIS STREAM(S)  |MEIC_TRA
+
+TAG NAME        |HFA
+REGION(S)       |Hefei
+EMIS STREAM(S)  |MEIC_AGR
+
+TAG NAME        |HFB
+REGION(S)       |Hefei
+EMIS STREAM(S)  |MEIC_BIO
+
+TAG NAME        |TLP
+REGION(S)       |Tongling
+EMIS STREAM(S)  |MEIC_POW
+
+TAG NAME        |TLI
+REGION(S)       |Tongling
+EMIS STREAM(S)  |MEIC_IND
+
+TAG NAME        |TLR
+REGION(S)       |Tongling
+EMIS STREAM(S)  |MEIC_RES
+
+TAG NAME        |TLT
+REGION(S)       |Tongling
+EMIS STREAM(S)  |MEIC_TRA
+
+TAG NAME        |TLA
+REGION(S)       |Tongling
+EMIS STREAM(S)  |MEIC_AGR
+
+TAG NAME        |TLB
+REGION(S)       |Tongling
+EMIS STREAM(S)  |MEIC_BIO
+
+TAG NAME        |CZP
+REGION(S)       |Chizhou
+EMIS STREAM(S)  |MEIC_POW
+
+TAG NAME        |CZI
+REGION(S)       |Chizhou
+EMIS STREAM(S)  |MEIC_IND
+
+TAG NAME        |CZR
+REGION(S)       |Chizhou
+EMIS STREAM(S)  |MEIC_RES
+
+TAG NAME        |CZT
+REGION(S)       |Chizhou
+EMIS STREAM(S)  |MEIC_TRA
+
+TAG NAME        |CZA
+REGION(S)       |Chizhou
+EMIS STREAM(S)  |MEIC_AGR
+
+TAG NAME        |CZB
+REGION(S)       |Chizhou
+EMIS STREAM(S)  |MEIC_BIO
+
+TAG NAME        |JJP
+REGION(S)       |Jiujiang
+EMIS STREAM(S)  |MEIC_POW
+
+TAG NAME        |JJI
+REGION(S)       |Jiujiang
+EMIS STREAM(S)  |MEIC_IND
+
+TAG NAME        |JJR
+REGION(S)       |Jiujiang
+EMIS STREAM(S)  |MEIC_RES
+
+TAG NAME        |JJT
+REGION(S)       |Jiujiang
+EMIS STREAM(S)  |MEIC_TRA
+
+TAG NAME        |JJA
+REGION(S)       |Jiujiang
+EMIS STREAM(S)  |MEIC_AGR
+
+TAG NAME        |JJB
+REGION(S)       |Jiujiang
+EMIS STREAM(S)  |MEIC_BIO
+
+ENDLIST eof 
